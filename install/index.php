@@ -1,9 +1,13 @@
 <?
+/**
+ * Copyright (c) 8/4/2020 Created By/Edited By ASDAFF asdaff.asad@yandex.ru
+ */
+
 IncludeModuleLangFile(__FILE__);
-Class weblooter_cleaningstructure extends CModule
+Class cleaning_structure extends CModule
 {
-	const MODULE_ID = 'weblooter.cleaningstructure';
-	var $MODULE_ID = 'weblooter.cleaningstructure'; 
+	const MODULE_ID = 'cleaning.structure';
+	var $MODULE_ID = 'cleaning.structure';
 	var $MODULE_VERSION;
 	var $MODULE_VERSION_DATE;
 	var $MODULE_NAME;
@@ -17,22 +21,22 @@ Class weblooter_cleaningstructure extends CModule
 		include(dirname(__FILE__)."/version.php");
 		$this->MODULE_VERSION = $arModuleVersion["VERSION"];
 		$this->MODULE_VERSION_DATE = $arModuleVersion["VERSION_DATE"];
-		$this->MODULE_NAME = GetMessage("weblooter.cleaningstructure_MODULE_NAME");
-		$this->MODULE_DESCRIPTION = GetMessage("weblooter.cleaningstructure_MODULE_DESC");
+		$this->MODULE_NAME = GetMessage("cleaning.structure_MODULE_NAME");
+		$this->MODULE_DESCRIPTION = GetMessage("cleaning.structure_MODULE_DESC");
 
-		$this->PARTNER_NAME = GetMessage("weblooter.cleaningstructure_PARTNER_NAME");
-		$this->PARTNER_URI = GetMessage("weblooter.cleaningstructure_PARTNER_URI");
+		$this->PARTNER_NAME = GetMessage("cleaning.structure_PARTNER_NAME");
+		$this->PARTNER_URI = GetMessage("cleaning.structure_PARTNER_URI");
 	}
 
 	function InstallDB($arParams = array())
 	{
-		RegisterModuleDependences('main', 'OnBuildGlobalMenu', self::MODULE_ID, 'CWeblooterCleaningstructure', 'OnBuildGlobalMenu');
+		RegisterModuleDependences('main', 'OnBuildGlobalMenu', self::MODULE_ID, 'CCleaningStructure', 'OnBuildGlobalMenu');
 		return true;
 	}
 
 	function UnInstallDB($arParams = array())
 	{
-		UnRegisterModuleDependences('main', 'OnBuildGlobalMenu', self::MODULE_ID, 'CWeblooterCleaningstructure', 'OnBuildGlobalMenu');
+		UnRegisterModuleDependences('main', 'OnBuildGlobalMenu', self::MODULE_ID, 'CCleaningStructure', 'OnBuildGlobalMenu');
 		return true;
 	}
 

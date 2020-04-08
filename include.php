@@ -1,7 +1,11 @@
 <?
+/**
+ * Copyright (c) 8/4/2020 Created By/Edited By ASDAFF asdaff.asad@yandex.ru
+ */
+
 IncludeModuleLangFile(__FILE__);
 $MODULE_ID = basename(dirname(__FILE__));
-Class CWeblooterCleaningstructure 
+Class CCleaningStructure
 {
 
 	function OnBuildGlobalMenu(&$aGlobalMenu, &$aModuleMenu)
@@ -18,7 +22,7 @@ Class CWeblooterCleaningstructure
             "text" => GetMessage('LINK_TEXT'),
             "title" => '',
             "url" => $MODULE_ID.".php",
-            "icon" => "weblooter_icon",
+            "icon" => "cleaning_icon",
             "page_icon" => "",
             "items_id" => $MODULE_ID."_items",
             "more_url" => array(),

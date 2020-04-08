@@ -1,7 +1,11 @@
 <?
+/**
+ * Copyright (c) 8/4/2020 Created By/Edited By ASDAFF asdaff.asad@yandex.ru
+ */
+
 require_once($_SERVER["DOCUMENT_ROOT"]."/bitrix/modules/main/include/prolog_admin_before.php");
 IncludeModuleLangFile(__FILE__);
-$MODULE_PATH = $_SERVER['DOCUMENT_ROOT'].'/bitrix/modules/weblooter.cleaningstructure';
+$MODULE_PATH = $_SERVER['DOCUMENT_ROOT'].'/bitrix/modules/cleaning.structure';
 $APPLICATION->SetTitle(GetMessage('H1'));
 
 if(isset($_REQUEST['STEP'])){
@@ -69,7 +73,7 @@ require($_SERVER["DOCUMENT_ROOT"]."/bitrix/modules/main/include/prolog_admin_aft
 ?>
     <div class="adm-detail-block">
         <div class="adm-detail-tabs-block">
-        <span class="adm-detail-tab <?=(!isset($_REQUEST['STEP']))?'adm-detail-tab-active':'" onclick="location.href=\''.$APPLICATION->GetCurPageParam('',array('STEP','FILE_IGNORE','DIR_IGNORE','UPLOAD_DIRECTORY')).'\''?>"><?=GetMessage("WEBLOOTER_CLEANINGSTRUCTURE_NASTROYKA_SKANIROVAN")?></span>
+        <span class="adm-detail-tab <?=(!isset($_REQUEST['STEP']))?'adm-detail-tab-active':'" onclick="location.href=\''.$APPLICATION->GetCurPageParam('',array('STEP','FILE_IGNORE','DIR_IGNORE','UPLOAD_DIRECTORY')).'\''?>"><?=GetMessage("CLEANING_STRUCTURE_NASTROYKA_SKANIROVAN")?></span>
         <span class="adm-detail-tab <?
         if( (isset($_REQUEST['STEP'])) && ($_REQUEST['STEP'] < 1) ){
             echo 'adm-detail-tab-disable';}
@@ -78,7 +82,7 @@ require($_SERVER["DOCUMENT_ROOT"]."/bitrix/modules/main/include/prolog_admin_aft
         elseif( (isset($_REQUEST['STEP'])) && ($_REQUEST['STEP'] > 1) ){
             echo '" onclick="location.href=\''.$APPLICATION->GetCurPageParam('STEP=1',array('STEP','FILE_IGNORE','DIR_IGNORE','UPLOAD_DIRECTORY','FILES_LIST')).'\'';}
         else{echo 'adm-detail-tab-disable';}
-            ?>"><?=GetMessage("WEBLOOTER_CLEANINGSTRUCTURE_REZULQTAT_SKANIROVAN")?></span>
+            ?>"><?=GetMessage("CLEANING_STRUCTURE_REZULQTAT_SKANIROVAN")?></span>
             <span class="adm-detail-tab <?
             if( (isset($_REQUEST['STEP'])) && ($_REQUEST['STEP'] < 2) ){
                 echo 'adm-detail-tab-disable';}
@@ -87,7 +91,7 @@ require($_SERVER["DOCUMENT_ROOT"]."/bitrix/modules/main/include/prolog_admin_aft
             elseif( (isset($_REQUEST['STEP'])) && ($_REQUEST['STEP'] > 2) ){
                 echo '" onclick="location.href=\''.$APPLICATION->GetCurPageParam('STEP=2',array('STEP','FILE_IGNORE','DIR_IGNORE','UPLOAD_DIRECTORY','FILES_LIST')).'\'';}
             else{echo 'adm-detail-tab-disable';}
-            ?>"><?=GetMessage("WEBLOOTER_CLEANINGSTRUCTURE_REZULQTAT_CISTKI_SIS")?></span>
+            ?>"><?=GetMessage("CLEANING_STRUCTURE_REZULQTAT_CISTKI_SIS")?></span>
         </div>
         <div class="adm-detail-content-wrap">
             <?

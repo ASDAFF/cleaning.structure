@@ -1,18 +1,22 @@
 <?
-$MODULE_PATH = $_SERVER['DOCUMENT_ROOT'].'/bitrix/modules/weblooter.cleaningstructure';
+/**
+ * Copyright (c) 8/4/2020 Created By/Edited By ASDAFF asdaff.asad@yandex.ru
+ */
+
+$MODULE_PATH = $_SERVER['DOCUMENT_ROOT'].'/bitrix/modules/cleaning.structure';
 IncludeModuleLangFile(__FILE__);
 ?>
 <div class="adm-detail-content">
     <div class="adm-detail-title">
-        <?=GetMessage("WEBLOOTER_CLEANINGSTRUCTURE_REZULQTAT_SKANIROVAN")?></div>
+        <?=GetMessage("CLEANING_STRUCTURE_REZULQTAT_SKANIROVAN")?></div>
     <div class="adm-detail-content-item-block">
         <?if($arResult['FILE_SIZE'] == 0):?>
-            <?=GetMessage("WEBLOOTER_CLEANINGSTRUCTURE_V_SISTEME_NE_NAYDENO")?><?else:?>
-            <form id="weblooter_cleaningstructure" name="weblooter_cleaningstructure" method="POST" action="<?=$_SERVER['PHP_SELF']?>">
+            <?=GetMessage("CLEANING_STRUCTURE_V_SISTEME_NE_NAYDENO")?><?else:?>
+            <form id="cleaning_structure" name="cleaning_structure" method="POST" action="<?=$_SERVER['PHP_SELF']?>">
                 <input type="hidden" name="STEP" value="2" />
-                <p><?=GetMessage("WEBLOOTER_CLEANINGSTRUCTURE_BYLO_VYAVLENO")?><strong><i><?=sizeof($arResult['FILES_LIST'])?></i></strong> <?=GetMessage("WEBLOOTER_CLEANINGSTRUCTURE_FAYLOV_KOTORYE_NE_I")?></p>
-                <p><?=GetMessage("WEBLOOTER_CLEANINGSTRUCTURE_OBSIY_RAZMER_VSEH_FA")?><strong><i><?=$arResult['ALL_FILE_SIZE']?> Mb</i></strong>, <?=GetMessage("WEBLOOTER_CLEANINGSTRUCTURE_IZ_NIH")?><strong><i><?=$arResult['FILE_SIZE']?> Mb</i></strong> <?=GetMessage("WEBLOOTER_CLEANINGSTRUCTURE_ZANIMAUT_FAYLY_KOTO")?><br/>
-                    <?=GetMessage("WEBLOOTER_CLEANINGSTRUCTURE_PROCENT_MUSORNYH_FA")?><strong><i><?=( round( ($arResult['FILE_SIZE']/$arResult['ALL_FILE_SIZE']*100),2 ) )?>%</i></strong>.</p>
+                <p><?=GetMessage("CLEANING_STRUCTURE_BYLO_VYAVLENO")?><strong><i><?=sizeof($arResult['FILES_LIST'])?></i></strong> <?=GetMessage("CLEANING_STRUCTURE_FAYLOV_KOTORYE_NE_I")?></p>
+                <p><?=GetMessage("CLEANING_STRUCTURE_OBSIY_RAZMER_VSEH_FA")?><strong><i><?=$arResult['ALL_FILE_SIZE']?> Mb</i></strong>, <?=GetMessage("CLEANING_STRUCTURE_IZ_NIH")?><strong><i><?=$arResult['FILE_SIZE']?> Mb</i></strong> <?=GetMessage("CLEANING_STRUCTURE_ZANIMAUT_FAYLY_KOTO")?><br/>
+                    <?=GetMessage("CLEANING_STRUCTURE_PROCENT_MUSORNYH_FA")?><strong><i><?=( round( ($arResult['FILE_SIZE']/$arResult['ALL_FILE_SIZE']*100),2 ) )?>%</i></strong>.</p>
                 <script type="text/javascript" src="https://www.google.com/jsapi?autoload={'modules':[{'name':'visualization','version':'1','packages':['gauge']}]}"></script>
                 <div id="chart_div" style="width: 300px; height: 300px; margin: auto"></div>
                 <script type="text/javascript">
@@ -46,7 +50,7 @@ IncludeModuleLangFile(__FILE__);
 <div class="adm-detail-content-btns-wrap adm-detail-content-btns-fixed adm-detail-content-btns-pin">
     <div class="adm-detail-content-btns">
         <?if($arResult['FILE_SIZE'] != 0):?>
-            <input type="submit" form="weblooter_cleaningstructure" value="<?=GetMessage("WEBLOOTER_CLEANINGSTRUCTURE_ZAPUSTITQ_OCISTKU_SI")?>" class="adm-btn-save" />
+            <input type="submit" form="cleaning_structure" value="<?=GetMessage("CLEANING_STRUCTURE_ZAPUSTITQ_OCISTKU_SI")?>" class="adm-btn-save" />
         <?endif;?>
     </div>
 </div>
